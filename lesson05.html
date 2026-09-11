@@ -95,14 +95,14 @@
     <div class="tag">요청 주소의 구성 — 인증키 없는 요청</div>
     <div class="body"><pre class="mini"><span style="color:#3ba6a0;text-decoration:underline">https://open.neis.go.kr/hub/mealServiceDietInfo</span>   <span style="color:#9b8c66">← 어디에 — 요청 주소</span>
 <span style="color:#f4b400">?Type=json</span>                                        <span style="color:#9b8c66">← 응답 형식 — 이 줄이 빠지면 XML로 온다</span>
-<span style="color:#54a24b">&amp;ATPT_OFCDC_SC_CODE=B10</span>                           <span style="color:#9b8c66">← 조건 — 교육청(서울)</span>
-<span style="color:#54a24b">&amp;SD_SCHUL_CODE=7010073</span>                            <span style="color:#9b8c66">← 조건 — 학교(당곡고)</span>
+<span style="color:#54a24b">&amp;ATPT_OFCDC_SC_CODE=E10</span>                           <span style="color:#9b8c66">← 조건 — 교육청(서울)</span>
+<span style="color:#54a24b">&amp;SD_SCHUL_CODE=7310190</span>                            <span style="color:#9b8c66">← 조건 — 학교(당곡고)</span>
 <span style="color:#54a24b">&amp;MMEAL_SC_CODE=2</span>                                  <span style="color:#9b8c66">← 조건 — 식사(중식)</span>
 <span style="color:#e8930c">&amp;MLSV_FROM_YMD=20260602&amp;MLSV_TO_YMD=20260602</span>      <span style="color:#9b8c66">← 조건 — 기간(하이픈 없는 여덟 자리)</span>
 <span style="color:#e8930c">&amp;MLSV_YMD=20260602</span>                                <span style="color:#9b8c66">← 하루 조회 시 위 기간 조건 대신 사용</span></pre></div>
     <div class="note">요청 주소와 조건은 2차시 KOBIS와 같은 구조인데, 인증키만 없다. 날짜 값을 바꾸면 응답이 그 날짜 것으로 바뀐다.</div>
   </div>
-  <p><a href="https://open.neis.go.kr/hub/mealServiceDietInfo?ATPT_OFCDC_SC_CODE=B10&amp;SD_SCHUL_CODE=7010073&amp;MMEAL_SC_CODE=2&amp;MLSV_YMD=20260602&amp;Type=json" target="_blank" rel="noopener">당곡고등학교 2026년 6월 2일 중식 응답 열기</a>를 눌러 아래 예시와 비교합니다. <code>Type=json</code>은 JSON 형식으로 응답해 달라는 지정입니다. 이를 생략하면 XML 형식으로 응답합니다. 실제 응답은 등록 정보의 수정에 따라 달라질 수 있습니다.</p>
+  <p><a href="https://open.neis.go.kr/hub/mealServiceDietInfo?ATPT_OFCDC_SC_CODE=E10&amp;SD_SCHUL_CODE=7310190&amp;MMEAL_SC_CODE=2&amp;MLSV_YMD=20260602&amp;Type=json" target="_blank" rel="noopener">당곡고등학교 2026년 6월 2일 중식 응답 열기</a>를 눌러 아래 예시와 비교합니다. <code>Type=json</code>은 JSON 형식으로 응답해 달라는 지정입니다. 이를 생략하면 XML 형식으로 응답합니다. 실제 응답은 등록 정보의 수정에 따라 달라질 수 있습니다.</p>
   <div class="codewrap code"><span class="label">실제 응답 (일부 발췌 · 2026-06-02)</span><pre>{
   "mealServiceDietInfo": [
     { "head": [ { "list_total_count": 1 } ] },
@@ -191,7 +191,7 @@
     <div class="body"><pre class="mini"><span style="color:#3ba6a0;text-decoration:underline">https://open.neis.go.kr/hub/mealServiceDietInfo</span>   <span style="color:#9b8c66">← 어디에 — 요청 주소</span>
 <span style="color:#e45756">?KEY=발급받은_인증키</span>                            <span style="color:#9b8c66">← 인증키 — Secrets 설정에서 꺼내 붙인다</span>
 <span style="color:#f4b400">&amp;Type=json</span>                                    <span style="color:#9b8c66">← 응답 형식</span>
-<span style="color:#54a24b">&amp;ATPT_OFCDC_SC_CODE=B10&amp;SD_SCHUL_CODE=7010073</span> <span style="color:#9b8c66">← 조건 — 교육청·학교</span>
+<span style="color:#54a24b">&amp;ATPT_OFCDC_SC_CODE=E10&amp;SD_SCHUL_CODE=7310190</span> <span style="color:#9b8c66">← 조건 — 교육청·학교</span>
 <span style="color:#e8930c">&amp;MLSV_FROM_YMD=20250901&amp;MLSV_TO_YMD=20260930</span>  <span style="color:#9b8c66">← 조건 — 2025년 9월~2026년 9월</span>
 <span style="color:#e8930c">&amp;pSize=1000</span>                                   <span style="color:#9b8c66">← 한 번에 받을 행 수</span></pre></div>
     <div class="note">인증키는 Secrets 설정에서 읽어 KEY 항목으로 전달합니다. pSize는 한 번에 요청할 행 수이고 상한은 1000입니다. 키가 없으면 pSize와 pIndex가 무시되어 언제나 첫 5건만 온다(실측). 전체 건수가 pSize보다 많을 때만 다음 쪽을 이어서 요청합니다.</div>
@@ -249,12 +249,12 @@
       </div>
       <div class="callout warn">
         <div class="h">🏫 다른 학교를 넣으려면 — 학교 코드를 찾아 확정한다</div>
-        <p>다른 학교를 불러오려면 교육청 코드와 학교 코드 두 가지가 필요합니다. AI가 제시한 학교 코드가 실제 코드와 다를 수 있으므로, 공식 응답에서 직접 확인합니다. 코드를 찾는 방법은 학교기본정보 API에 학교 이름을 넣어 조회하는 것입니다. 주소는 <code>https://open.neis.go.kr/hub/schoolInfo?Type=json&amp;SCHUL_NM=학교이름</code>이며, 줄임말은 검색되지 않아 정식 명칭이 필요하고 같은 이름이 여러 지역에 있으면 교육청 코드로 좁혀야 합니다. 확인한 코드는 프롬프트에 직접 적어 주며, 예를 들어 서울시교육청은 <code>B10</code>, 수도여자고등학교는 <code>7010090</code>, 당곡고등학교는 <code>7010073</code>입니다. 교육청 코드는 아래 표에서 확인할 수 있습니다. 학교 코드는 학교마다 다르고 수가 많아 표로 정리할 수 없습니다.</p>
+        <p>다른 학교를 불러오려면 교육청 코드와 학교 코드 두 가지가 필요합니다. AI가 제시한 학교 코드가 실제 코드와 다를 수 있으므로, 공식 응답에서 직접 확인합니다. 코드를 찾는 방법은 학교기본정보 API에 학교 이름을 넣어 조회하는 것입니다. 주소는 <code>https://open.neis.go.kr/hub/schoolInfo?Type=json&amp;SCHUL_NM=학교이름</code>이며, 줄임말은 검색되지 않아 정식 명칭이 필요하고 같은 이름이 여러 지역에 있으면 교육청 코드로 좁혀야 합니다. 확인한 코드는 프롬프트에 직접 적어 주며, 예를 들어 서울시교육청은 <code>E10</code>, 수도여자고등학교는 <code>7010090</code>, 당곡고등학교는 <code>7310190</code>입니다. 교육청 코드는 아래 표에서 확인할 수 있습니다. 학교 코드는 학교마다 다르고 수가 많아 표로 정리할 수 없습니다.</p>
       <div class="finder" id="school-finder">
         <div class="row">
           <select id="sf-office" aria-label="교육청">
             <option value="">전체</option>
-            <option value="B10" selected>서울</option>
+            <option value="E10" selected>서울</option>
             <option value="C10">부산</option>
             <option value="D10">대구</option>
             <option value="E10">인천</option>
@@ -281,7 +281,7 @@
       <table class="daymap" style="margin:10px 0 0">
         <thead><tr><th>지역</th><th>코드</th><th>지역</th><th>코드</th><th>지역</th><th>코드</th></tr></thead>
         <tbody>
-          <tr><td>서울</td><td><code>B10</code></td><td>부산</td><td><code>C10</code></td><td>대구</td><td><code>D10</code></td></tr>
+          <tr><td>서울</td><td><code>E10</code></td><td>부산</td><td><code>C10</code></td><td>대구</td><td><code>D10</code></td></tr>
           <tr><td>인천</td><td><code>E10</code></td><td>광주</td><td><code>F10</code></td><td>대전</td><td><code>G10</code></td></tr>
           <tr><td>울산</td><td><code>H10</code></td><td>세종</td><td><code>I10</code></td><td>경기</td><td><code>J10</code></td></tr>
           <tr><td>강원</td><td><code>K10</code></td><td>충북</td><td><code>M10</code></td><td>충남</td><td><code>N10</code></td></tr>
@@ -420,7 +420,7 @@ plotly</pre></div>
 
 ──── 아래는 나이스 교육정보 개방 포털 문서에서 복사한 부분 ────
 요청 주소: https://open.neis.go.kr/hub/mealServiceDietInfo
-요청변수: Type=json · ATPT_OFCDC_SC_CODE=B10(서울시교육청) · SD_SCHUL_CODE=7010073(당곡고등학교) ·
+요청변수: Type=json · ATPT_OFCDC_SC_CODE=E10(서울시교육청) · SD_SCHUL_CODE=7310190(당곡고등학교) ·
   MMEAL_SC_CODE=2(중식) · MLSV_FROM_YMD, MLSV_TO_YMD(조회 시작일과 끝일, 하이픈 없는 여덟 자리)
 응답 구조: mealServiceDietInfo의 두 번째 상자 안 row 목록에 날짜별로
   MLSV_YMD(급식일) · DDISH_NM(메뉴 전체 - &lt;br/&gt;로 구분되고, 메뉴 뒤 괄호 숫자는 알레르기 번호) ·
@@ -446,8 +446,8 @@ ymd = picked.strftime("%Y%m%d")
 url = "https://open.neis.go.kr/hub/mealServiceDietInfo"
 params = {
     "Type": "json",                # 응답을 JSON으로
-    "ATPT_OFCDC_SC_CODE": "B10",   # 서울시교육청
-    "SD_SCHUL_CODE": "7010073",    # 당곡고등학교
+    "ATPT_OFCDC_SC_CODE": "E10",   # 서울시교육청
+    "SD_SCHUL_CODE": "7310190",    # 당곡고등학교
     "MMEAL_SC_CODE": "2",          # 중식
     "MLSV_FROM_YMD": ymd,
     "MLSV_TO_YMD": ymd,
@@ -515,7 +515,7 @@ def load_lunch(frm, to, api_key):
             params={
                 "Type": "json", "KEY": api_key,
                 "pSize": 1000, "pIndex": page,
-                "ATPT_OFCDC_SC_CODE": "B10", "SD_SCHUL_CODE": "7010073",
+                "ATPT_OFCDC_SC_CODE": "E10", "SD_SCHUL_CODE": "7310190",
                 "MMEAL_SC_CODE": "2", "MLSV_FROM_YMD": frm, "MLSV_TO_YMD": to,
             }, timeout=20,
         )
