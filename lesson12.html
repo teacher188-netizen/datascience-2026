@@ -210,7 +210,7 @@
 ──── 아래는 나이스 교육정보 개방 포털 문서에서 복사한 부분 ────
 [급식식단정보] 요청 주소: https://open.neis.go.kr/hub/mealServiceDietInfo
 요청변수: Type=json(응답은 JSON, 글자는 UTF-8) · KEY(인증키) ·
-  ATPT_OFCDC_SC_CODE=B10(서울특별시교육청) · SD_SCHUL_CODE=7010073(당곡고등학교) ·
+  ATPT_OFCDC_SC_CODE=E10(서울특별시교육청) · SD_SCHUL_CODE=7310190(당곡고등학교) ·
   MMEAL_SC_CODE=2(중식) · MLSV_FROM_YMD=20250901, MLSV_TO_YMD=20260930 ·
   pSize(한 번에 받을 행 수, 상한 1000) · pIndex(쪽 번호, 1부터)
 응답 구조: mealServiceDietInfo의 첫 번째 상자 head 안에 list_total_count(전체 건수),
@@ -234,8 +234,8 @@ import streamlit as st
 def load_baskets(api_key):
     rows, page = [], 1
     params = {"Type": "json", "KEY": api_key,
-              "pSize": 1000, "ATPT_OFCDC_SC_CODE": "B10",
-              "SD_SCHUL_CODE": "7010073", "MMEAL_SC_CODE": "2",
+              "pSize": 1000, "ATPT_OFCDC_SC_CODE": "E10",
+              "SD_SCHUL_CODE": "7310190", "MMEAL_SC_CODE": "2",
               "MLSV_FROM_YMD": "20250901", "MLSV_TO_YMD": "20260930"}
     while True:
         response = requests.get("https://open.neis.go.kr/hub/mealServiceDietInfo",
