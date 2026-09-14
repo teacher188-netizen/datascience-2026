@@ -66,7 +66,7 @@
     document.head.appendChild(s);
     document.addEventListener('DOMContentLoaded', function () {
       var toIndex = (path.indexOf('/teacher/') !== -1) ? '../index.html' : 'index.html';
-      document.title = '아직 열리지 않은 페이지 · 데이터 과학 당곡고';
+      document.title = '아직 열리지 않은 페이지 · 데이터 과학 산곡고';
       document.body.innerHTML =
         '<div style="max-width:520px;margin:18vh auto;padding:0 24px;text-align:center;' +
         'font-family:system-ui,-apple-system,\'Apple SD Gothic Neo\',sans-serif;color:#334155;line-height:1.7">' +
