@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>5차시 · 두 번째 API — 우리 학교 급식 · 데이터 과학 삼산고</title>
+<title>5차시 · 두 번째 API — 우리 학교 급식 · 데이터 과학 산곡고</title>
 <link rel="stylesheet" href="assets/style.css?v=tb16">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧭</text></svg>">
 <script src="assets/release.js"></script>
@@ -34,7 +34,7 @@
 </head>
 <body>
 <div class="topbar"><div class="inner">
-  <a class="brand" href="index.html"><span class="chick">🧭</span> 데이터 과학 <span class="a">삼산고</span></a>
+  <a class="brand" href="index.html"><span class="chick">🧭</span> 데이터 과학 <span class="a">산곡고</span></a>
   <span class="spacer"></span>
   <a class="home" href="index.html">← 목차</a>
   <span class="badge">학생용</span>
@@ -90,13 +90,13 @@
       <p>포털에서 <b>데이터셋 → 급식식단정보 → Open API</b>를 엽니다. <b>신청주소</b>는 요청 주소, <b>신청인자</b>는 요청에 넣을 조건, <b>출력값</b>은 응답에 들어 있는 항목을 설명합니다. 이 세 부분을 읽고 필요한 내용을 프롬프트에 첨부합니다. 4절에 정리한 문서 요약을 사용해도 됩니다.</p>
     </div>
   </details>
-  <p>앱을 만들기 전에 요청 주소를 새 탭에서 열어 JSON 응답을 확인합니다. 아래 예시는 인증키 없이 삼산고등학교의 하루 중식을 요청하는 주소입니다.</p>
+  <p>앱을 만들기 전에 요청 주소를 새 탭에서 열어 JSON 응답을 확인합니다. 아래 예시는 인증키 없이 산곡고등학교의 하루 중식을 요청하는 주소입니다.</p>
   <div class="specimen semi" style="margin:18px 0">
     <div class="tag">요청 주소의 구성 — 인증키 없는 요청</div>
     <div class="body"><pre class="mini"><span style="color:#3ba6a0;text-decoration:underline">https://open.neis.go.kr/hub/mealServiceDietInfo</span>   <span style="color:#9b8c66">← 어디에 — 요청 주소</span>
 <span style="color:#f4b400">?Type=json</span>                                        <span style="color:#9b8c66">← 응답 형식 — 이 줄이 빠지면 XML로 온다</span>
 <span style="color:#54a24b">&amp;ATPT_OFCDC_SC_CODE=E10</span>                           <span style="color:#9b8c66">← 조건 — 교육청(서울)</span>
-<span style="color:#54a24b">&amp;SD_SCHUL_CODE=7310190</span>                            <span style="color:#9b8c66">← 조건 — 학교(삼산고)</span>
+<span style="color:#54a24b">&amp;SD_SCHUL_CODE=7310190</span>                            <span style="color:#9b8c66">← 조건 — 학교(산곡고)</span>
 <span style="color:#54a24b">&amp;MMEAL_SC_CODE=2</span>                                  <span style="color:#9b8c66">← 조건 — 식사(중식)</span>
 <span style="color:#e8930c">&amp;MLSV_FROM_YMD=20260602&amp;MLSV_TO_YMD=20260602</span>      <span style="color:#9b8c66">← 조건 — 기간(하이픈 없는 여덟 자리)</span>
 <span style="color:#e8930c">&amp;MLSV_YMD=20260602</span>                                <span style="color:#9b8c66">← 하루 조회 시 위 기간 조건 대신 사용</span></pre></div>
@@ -242,14 +242,14 @@
         <ul>
 
       <li><b>그래프 작성</b> — 3차시와 4차시에 사용한 plotly로 그래프를 그립니다.</li>
-      <li><b>학교 선택과 비교</b> — 삼산고등학교를 기본값으로 두고 학교를 <b>세 곳 이상 한 번에</b> 고를 수 있게 하고, 고른 학교를 함께 비교하는 화면을 적어도 하나 만듭니다. 모든 화면이 비교일 필요는 없습니다.</li>
+      <li><b>학교 선택과 비교</b> — 산곡고등학교를 기본값으로 두고 학교를 <b>세 곳 이상 한 번에</b> 고를 수 있게 하고, 고른 학교를 함께 비교하는 화면을 적어도 하나 만듭니다. 모든 화면이 비교일 필요는 없습니다.</li>
       <li><b>앱 주소 정리</b> — 앱 주소를 알아보기 쉽게 정리하여 다른 학생이 그대로 열어 사용할 수 있게 합니다.</li>
     
         </ul>
       </div>
       <div class="callout warn">
         <div class="h">🏫 다른 학교를 넣으려면 — 학교 코드를 찾아 확정한다</div>
-        <p>다른 학교를 불러오려면 교육청 코드와 학교 코드 두 가지가 필요합니다. AI가 제시한 학교 코드가 실제 코드와 다를 수 있으므로, 공식 응답에서 직접 확인합니다. 코드를 찾는 방법은 학교기본정보 API에 학교 이름을 넣어 조회하는 것입니다. 주소는 <code>https://open.neis.go.kr/hub/schoolInfo?Type=json&amp;SCHUL_NM=학교이름</code>이며, 줄임말은 검색되지 않아 정식 명칭이 필요하고 같은 이름이 여러 지역에 있으면 교육청 코드로 좁혀야 합니다. 확인한 코드는 프롬프트에 직접 적어 주며, 예를 들어 서울시교육청은 <code>E10</code>, 수도여자고등학교는 <code>7010090</code>, 삼산고등학교는 <code>7310190</code>입니다. 교육청 코드는 아래 표에서 확인할 수 있습니다. 학교 코드는 학교마다 다르고 수가 많아 표로 정리할 수 없습니다.</p>
+        <p>다른 학교를 불러오려면 교육청 코드와 학교 코드 두 가지가 필요합니다. AI가 제시한 학교 코드가 실제 코드와 다를 수 있으므로, 공식 응답에서 직접 확인합니다. 코드를 찾는 방법은 학교기본정보 API에 학교 이름을 넣어 조회하는 것입니다. 주소는 <code>https://open.neis.go.kr/hub/schoolInfo?Type=json&amp;SCHUL_NM=학교이름</code>이며, 줄임말은 검색되지 않아 정식 명칭이 필요하고 같은 이름이 여러 지역에 있으면 교육청 코드로 좁혀야 합니다. 확인한 코드는 프롬프트에 직접 적어 주며, 예를 들어 서울시교육청은 <code>E10</code>, 수도여자고등학교는 <code>7010090</code>, 산곡고등학교는 <code>7310190</code>입니다. 교육청 코드는 아래 표에서 확인할 수 있습니다. 학교 코드는 학교마다 다르고 수가 많아 표로 정리할 수 없습니다.</p>
       <div class="finder" id="school-finder">
         <div class="row">
           <select id="sf-office" aria-label="교육청">
@@ -408,7 +408,7 @@ plotly</pre></div>
     <p class="mini">이 차시에서 저장소를 새로 만듭니다. main.py와 requirements.txt를 만들어 올립니다. 커밋하면 앱이 스스로 배포됩니다(1~3분).</p>
     <p><b>예시 2 — 우리 학교만, 날짜를 골라 보는 화면.</b> 알레르기 번호를 켜고 끌 수 있게 했습니다.</p>
     <div class="codewrap improve"><span class="label">③ 페이지 추가 프롬프트</span><button class="copy-btn">복사</button><pre>pages 폴더에 '우리 학교 달력별 급식' 페이지를 추가해 줘. 파일 이름은 1_달력별_급식.py.
-첫 화면과 같은 급식 API를 쓰되, 이 페이지는 삼산고등학교로 고정해.
+첫 화면과 같은 급식 API를 쓰되, 이 페이지는 산곡고등학교로 고정해.
 
 - 날짜를 달력에서 고르면 그날 산곡고등학교 중식 메뉴를 카드로 보여 줘.
 - 메뉴 이름 뒤 괄호 속 숫자는 알레르기 번호야. '알레르기 정보 보기' 스위치를 두고

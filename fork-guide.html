@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>우리 학교 교재로 만들기 — 포크와 커스텀 안내</title>
-<meta name="description" content="삼산고 데이터 과학 웹 교재를 다른 학교에서 포크해 쓰는 방법. 포크·배포·학교 이름 바꾸기·원본 업데이트 받기까지.">
+<meta name="description" content="산곡고 데이터 과학 웹 교재를 다른 학교에서 포크해 쓰는 방법. 포크·배포·학교 이름 바꾸기·원본 업데이트 받기까지.">
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   :root {
@@ -295,8 +295,8 @@
   <tr><th>순서</th><th>무엇</th><th>안 바꾸면</th><th>걸리는 시간</th></tr>
   <tr><td><b>①</b></td><td>공개 차시</td><td>우리 진도와 어긋난 차시가 열려 있습니다</td><td>2분</td></tr>
   <tr><td><b>②</b></td><td>교사용 열쇠</td><td>교사용 페이지를 내가 열 수 없습니다</td><td>5분</td></tr>
-  <tr><td><b>③</b></td><td>급식 학교 코드</td><td class="bad">학생 앱이 삼산고 식단을 불러옵니다</td><td>15분</td></tr>
-  <tr><td><b>④</b></td><td>학교 이름</td><td>본문 곳곳에 삼산고가 나옵니다</td><td>20분</td></tr>
+  <tr><td><b>③</b></td><td>급식 학교 코드</td><td class="bad">학생 앱이 산곡고 식단을 불러옵니다</td><td>15분</td></tr>
+  <tr><td><b>④</b></td><td>학교 이름</td><td>본문 곳곳에 산곡고가 나옵니다</td><td>20분</td></tr>
   <tr><td><b>⑤</b></td><td>급식 실측 수치</td><td class="bad">교재 정답과 학생 화면이 어긋납니다</td><td>반나절</td></tr>
 </table>
 
@@ -366,7 +366,7 @@
 </div>
 
 <h3 id="c3">③ 급식 학교 코드 — 우리 학교 식단 불러오기</h3>
-<p>5차시와 12차시는 나이스 급식 API로 <b>우리 학교 식단</b>을 불러옵니다. 학교를 가리키는 코드가 예시 코드·프롬프트·주소에 들어 있어, 안 바꾸면 학생 앱이 삼산고 식단을 보여 줍니다.</p>
+<p>5차시와 12차시는 나이스 급식 API로 <b>우리 학교 식단</b>을 불러옵니다. 학교를 가리키는 코드가 예시 코드·프롬프트·주소에 들어 있어, 안 바꾸면 학생 앱이 산곡고 식단을 보여 줍니다.</p>
 
 <div class="tool">
   <div class="h">🏫 우리 학교 나이스 코드 찾기</div>
@@ -388,7 +388,7 @@ SD_SCHUL_CODE      = "7010073"   ← 학교 코드 (산곡고등학교)</pre></d
 
 <div class="card warn">
   <div class="h">⚠️ 반드시 긴 것부터 바꾸십시오</div>
-  <p><code>삼산고</code>를 먼저 바꾸면 <code>산곡고등학교</code>가 <code>○○고등학교등학교</code>처럼 깨집니다. 순서는 <b>산곡고등학교 → 삼산고 → 삼산</b>입니다.</p>
+  <p><code>산곡고</code>를 먼저 바꾸면 <code>산곡고등학교</code>가 <code>○○고등학교등학교</code>처럼 깨집니다. 순서는 <b>산곡고등학교 → 산곡고 → 삼산</b>입니다.</p>
 </div>
 
 <div class="tool">
@@ -403,15 +403,15 @@ SD_SCHUL_CODE      = "7010073"   ← 학교 코드 (산곡고등학교)</pre></d
   <div class="mini">브라우저 편집기(마침표 키)의 찾아 바꾸기에 위에서부터 차례로 넣으십시오.</div>
 </div>
 
-<p><code>assets/gate.js</code> 안에도 학교 이름이 한 곳 있습니다. HTML만 고치면 잠긴 차시를 열 때마다 삼산고가 되살아납니다.</p>
-<div class="codewrap"><span class="label">assets/gate.js — 잠금 안내 화면의 제목</span><pre>document.title = '아직 열리지 않은 페이지 · 데이터 과학 삼산고';</pre></div>
+<p><code>assets/gate.js</code> 안에도 학교 이름이 한 곳 있습니다. HTML만 고치면 잠긴 차시를 열 때마다 산곡고가 되살아납니다.</p>
+<div class="codewrap"><span class="label">assets/gate.js — 잠금 안내 화면의 제목</span><pre>document.title = '아직 열리지 않은 페이지 · 데이터 과학 산곡고';</pre></div>
 
 <h3 id="c5">⑤ 급식 실측 수치 — 우리 학교 급식으로 다시</h3>
-<p>12차시(연관 분석)와 5차시 일부는 <b>삼산고 급식을 실제로 세어 얻은 숫자</b>를 본문·표·확인 문제 정답으로 씁니다. 학교 코드를 바꾸면 이 숫자들이 전부 거짓이 됩니다.</p>
+<p>12차시(연관 분석)와 5차시 일부는 <b>산곡고 급식을 실제로 세어 얻은 숫자</b>를 본문·표·확인 문제 정답으로 씁니다. 학교 코드를 바꾸면 이 숫자들이 전부 거짓이 됩니다.</p>
 <div class="codewrap"><span class="label">이런 숫자들입니다</span><pre>중식 184일 · 배추김치 102일(55%) · 제육볶음 10일 · 동시 6일 · 향상도 1.08</pre></div>
 <div class="card warn">
   <div class="h">⚠️ 학교 코드만 바꾸고 수치를 두는 것이 가장 흔한 사고입니다</div>
-  <p>학생 화면에는 우리 학교 값이 뜨는데 교재와 활동지 정답은 삼산고 값이라, 확인 문제와 손계산 활동지가 통째로 정답 시비가 됩니다. 12차시를 쓰실 거라면 <b>교사가 먼저 ① 프롬프트를 우리 학교 코드로 실행해</b> 값을 얻고, 그 값으로 본문·표·확인 문제·이론 정리를 함께 고치십시오.</p>
+  <p>학생 화면에는 우리 학교 값이 뜨는데 교재와 활동지 정답은 산곡고 값이라, 확인 문제와 손계산 활동지가 통째로 정답 시비가 됩니다. 12차시를 쓰실 거라면 <b>교사가 먼저 ① 프롬프트를 우리 학교 코드로 실행해</b> 값을 얻고, 그 값으로 본문·표·확인 문제·이론 정리를 함께 고치십시오.</p>
   <p style="margin-top:6px">첫 학기에는 <b>12차시만 우리 학교 급식으로 바꾸고 나머지 차시는 그대로 두는 것</b>을 권합니다. 기온·영화·야구 데이터는 전국 공개 자료라 어느 학교에서든 그대로 쓸 수 있습니다.</p>
 </div>
 
@@ -508,7 +508,7 @@ SD_SCHUL_CODE      = "7010073"   ← 학교 코드 (산곡고등학교)</pre></d
 <p>있습니다. 오탈자나 더 나은 설명을 찾으셨다면 포크한 저장소에서 <b>Contribute → Open pull request</b>를 누르면 원본 쪽에 제안이 갑니다.</p>
 
 <h3>교사용 지도서도 함께 오나요?</h3>
-<p>옵니다. <code>teacher/</code> 아래에 차시별 진행안 14개, 이론 지도서, 수업용 슬라이드, 개강 전 안내가 들어 있습니다. 다만 50분 시간표와 반 구성은 삼산고 기준이므로 우리 학교에 맞게 고쳐 쓰셔야 합니다. 폼·활동지 원본·지필 문항은 이 저장소에 없습니다.</p>
+<p>옵니다. <code>teacher/</code> 아래에 차시별 진행안 14개, 이론 지도서, 수업용 슬라이드, 개강 전 안내가 들어 있습니다. 다만 50분 시간표와 반 구성은 산곡고 기준이므로 우리 학교에 맞게 고쳐 쓰셔야 합니다. 폼·활동지 원본·지필 문항은 이 저장소에 없습니다.</p>
 
 <h3>학생 개인정보가 넘어가나요?</h3>
 <p>교재 자체에는 학생 정보가 오가는 기능이 없습니다. 다만 저장소에 함께 들어 있는 <b>갤러리 페이지</b>를 쓰신다면, 설정을 그대로 둔 채 열지 마십시오. 학생이 올린 이름과 앱 주소가 원본 학교 데이터베이스로 갑니다. 쓰실 계획이면 <code>gallery/config.js</code>를 우리 학교 것으로 바꾸거나, 두 값을 비워 두십시오.</p>
@@ -658,7 +658,7 @@ function copyText(text, btn, label) {
     var lines = [
       '찾아 바꾸기 순서 (반드시 위에서부터)',
       '1. 산곡고등학교  →  ' + name,
-      '2. 삼산고        →  ' + mid,
+      '2. 산곡고        →  ' + mid,
       '3. 삼산          →  ' + shortName
     ];
     if (dom) lines.push('4. danggok.hs.kr →  ' + dom + '   (app.js와 SQL 파일 모두)');
@@ -666,7 +666,7 @@ function copyText(text, btn, label) {
     lines.push('명령어로 할 때 (저장소를 내려받은 폴더에서)');
     lines.push('grep -rln --exclude-dir=.git "삼산" . | xargs sed -i "" \\');
     lines.push('  -e "s/산곡고등학교/' + name + '/g" \\');
-    lines.push('  -e "s/삼산고/' + mid + '/g" \\');
+    lines.push('  -e "s/산곡고/' + mid + '/g" \\');
     lines.push('  -e "s/삼산/' + shortName + '/g"' + (dom ? ' \\' : ''));
     if (dom) lines.push('  -e "s/danggok.hs.kr/' + dom + '/g"');
     var text = lines.join('\n');
