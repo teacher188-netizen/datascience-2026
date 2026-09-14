@@ -384,11 +384,11 @@ SD_SCHUL_CODE      = "7010073"   ← 학교 코드 (산곡고등학교)</pre></d
 <p>바꾼 뒤 <code>lesson05.html</code>의 급식 주소 링크를 눌러 <b>우리 학교 식단이 실제로 돌아오는지</b> 확인하십시오.</p>
 
 <h3 id="c4">④ 학교 이름 — 우리 학교로</h3>
-<p>"삼산"은 저장소 전체에 약 219곳 나옵니다. 대부분은 페이지 제목과 바닥글이지만, 프롬프트와 예시 코드 안에도 있어 학생이 그대로 복사해 씁니다.</p>
+<p>"산곡"은 저장소 전체에 약 219곳 나옵니다. 대부분은 페이지 제목과 바닥글이지만, 프롬프트와 예시 코드 안에도 있어 학생이 그대로 복사해 씁니다.</p>
 
 <div class="card warn">
   <div class="h">⚠️ 반드시 긴 것부터 바꾸십시오</div>
-  <p><code>산곡고</code>를 먼저 바꾸면 <code>산곡고등학교</code>가 <code>○○고등학교등학교</code>처럼 깨집니다. 순서는 <b>산곡고등학교 → 산곡고 → 삼산</b>입니다.</p>
+  <p><code>산곡고</code>를 먼저 바꾸면 <code>산곡고등학교</code>가 <code>○○고등학교등학교</code>처럼 깨집니다. 순서는 <b>산곡고등학교 → 산곡고 → 산곡</b>입니다.</p>
 </div>
 
 <div class="tool">
@@ -659,15 +659,15 @@ function copyText(text, btn, label) {
       '찾아 바꾸기 순서 (반드시 위에서부터)',
       '1. 산곡고등학교  →  ' + name,
       '2. 산곡고        →  ' + mid,
-      '3. 삼산          →  ' + shortName
+      '3. 산곡          →  ' + shortName
     ];
     if (dom) lines.push('4. danggok.hs.kr →  ' + dom + '   (app.js와 SQL 파일 모두)');
     lines.push('');
     lines.push('명령어로 할 때 (저장소를 내려받은 폴더에서)');
-    lines.push('grep -rln --exclude-dir=.git "삼산" . | xargs sed -i "" \\');
+    lines.push('grep -rln --exclude-dir=.git "산곡" . | xargs sed -i "" \\');
     lines.push('  -e "s/산곡고등학교/' + name + '/g" \\');
     lines.push('  -e "s/산곡고/' + mid + '/g" \\');
-    lines.push('  -e "s/삼산/' + shortName + '/g"' + (dom ? ' \\' : ''));
+    lines.push('  -e "s/산곡/' + shortName + '/g"' + (dom ? ' \\' : ''));
     if (dom) lines.push('  -e "s/danggok.hs.kr/' + dom + '/g"');
     var text = lines.join('\n');
     out.textContent = text; out.dataset.v = text;
