@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>10차시 · 연관 분석 — 함께 나오는 메뉴와 함께 나오지 않는 메뉴 · 데이터 과학 당곡고 · 개정 검토본</title>
+<title>10차시 · 연관 분석 — 함께 나오는 메뉴와 함께 나오지 않는 메뉴 · 데이터 과학 산곡고 · 개정 검토본</title>
 <link rel="stylesheet" href="assets/style.css?v=tb16">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧭</text></svg>">
 <style>
@@ -28,7 +28,7 @@ figure[data-fig="baseline"] .wctl label, figure[data-fig="baseline"] .wctl .wout
 </head>
 <body>
 <div class="topbar"><div class="inner">
-  <a class="brand" href="index.html"><span class="chick">🧭</span> 데이터 과학 <span class="a">당곡고</span></a>
+  <a class="brand" href="index.html"><span class="chick">🧭</span> 데이터 과학 <span class="a">산곡고</span></a>
   <span class="spacer"></span>
   <a class="home" href="index.html">← 목차</a>
   <span class="badge">학생용</span>
@@ -46,7 +46,7 @@ figure[data-fig="baseline"] .wctl label, figure[data-fig="baseline"] .wctl .wout
     <span class="by">속담 — 함께 등장하는 메뉴를 찾고, 규칙의 방향과 등장 빈도를 비교합니다</span>
   </div>
 
-  <p class="lead">9차시에는 정답표 없이 영화를 비슷한 것끼리 묶었습니다. 오늘도 정답표는 없습니다. 이번에는 당곡고 중식 184일에서 같은 날 함께 나오는 메뉴를 찾습니다.</p>
+  <p class="lead">9차시에는 정답표 없이 영화를 비슷한 것끼리 묶었습니다. 오늘도 정답표는 없습니다. 이번에는 산곡고 중식 184일에서 같은 날 함께 나오는 메뉴를 찾습니다.</p>
 
   <div class="callout data">
     <div class="h">🏪 도입 — 박카스 옆에 무엇이 함께 찍혔는가</div>
@@ -121,12 +121,12 @@ figure[data-fig="baseline"] .wctl label, figure[data-fig="baseline"] .wctl .wout
     <div class="h">📖 교과서의 정의 <span class="src">『데이터 과학』 157쪽</span></div>
     <p class="q">"연관 분석(association analysis)이란 데이터베이스에서 그 안에 존재하는 항목 간의 유용한 연관 규칙을 발견하는 것이다." <span class="src">(157쪽)</span></p>
     <p class="q">"연관 분석은 고객의 구매 내역을 분석하는 데 흔히 쓰여 '장바구니 분석'이라고도 한다." <span class="src">(157쪽)</span></p>
-    <p class="t">→ 오늘은 <b>당곡고 중식 184일을 장바구니 184건</b>으로 보고, 같은 날 함께 나온 메뉴 사이의 규칙을 찾습니다.</p>
+    <p class="t">→ 오늘은 <b>산곡고 중식 184일을 장바구니 184건</b>으로 보고, 같은 날 함께 나온 메뉴 사이의 규칙을 찾습니다.</p>
   </div>
-  <p>당곡고 중식 184일에서 같은 날 함께 나온 두 메뉴의 짝은 3,000가지가 넘습니다. 이 많은 짝 가운데 살펴볼 만한 규칙을 고르는 기준이 <b>지지도·신뢰도·향상도</b>입니다.</p>
+  <p>산곡고 중식 184일에서 같은 날 함께 나온 두 메뉴의 짝은 3,000가지가 넘습니다. 이 많은 짝 가운데 살펴볼 만한 규칙을 고르는 기준이 <b>지지도·신뢰도·향상도</b>입니다.</p>
   <p>급식의 한 가지 예로 세 숫자를 익혀 봅니다.</p>
   <figure class="case" style="margin:14px 0 6px"><img src="img/lesson10_gamjatang.jpg" alt="뚝배기에 담긴 붉은 감자탕과 그 둘레에 놓인 김치 등 반찬 그릇들" loading="lazy" width="1400" height="1050" style="width:100%;height:auto;border-radius:10px">
-    <figcaption>감자탕과 김치 반찬. 당곡고 급식에서 돈육감자탕이 나온 6일에는 모두 석박지가 함께 나왔습니다. 사진: T.Tseng, 위키미디어 공용, CC BY 2.0 ※ 식당 상차림 사진이며 실제 급식 사진은 아닙니다.</figcaption></figure>
+    <figcaption>감자탕과 김치 반찬. 산곡고 급식에서 돈육감자탕이 나온 6일에는 모두 석박지가 함께 나왔습니다. 사진: T.Tseng, 위키미디어 공용, CC BY 2.0 ※ 식당 상차림 사진이며 실제 급식 사진은 아닙니다.</figcaption></figure>
   <div class="callout theory">
     <div class="h">📐 예시 하나로 세 숫자 — 돈육감자탕 → 석박지</div>
     <table class="daymap">
@@ -319,13 +319,13 @@ figure[data-fig="baseline"] .wctl label, figure[data-fig="baseline"] .wctl .wout
   <h2>3. 실습 ① — 규칙 표를 만들고 손계산과 맞춘다</h2>
   <div class="callout tip">
     <div class="h">🍚 우리는 DG푸드의 데이터 과학 인턴입니다</div>
-    <p>DG푸드는 이 수업에서만 사용하는 <b>가상의 급식 납품 회사</b>입니다. 다만 분석에 사용하는 급식 기록은 <b>당곡고에서 실제로 나온 식단</b>입니다.</p>
+    <p>DG푸드는 이 수업에서만 사용하는 <b>가상의 급식 납품 회사</b>입니다. 다만 분석에 사용하는 급식 기록은 <b>산곡고에서 실제로 나온 식단</b>입니다.</p>
     <p>식단팀은 어느 반찬이 어느 반찬과 자주 함께 나오는지 알아야 재료를 미리 준비하고 안내를 붙일 수 있습니다.</p>
     <p>데이터 과학 인턴은 찾은 규칙만 보고하지 않습니다.</p>
     <p><b>규칙과 함께 근거 숫자를 보고합니다.</b></p>
   </div>
   <p>오늘 만드는 앱은 하나입니다.</p>
-  <p>당곡고 중식 184일의 저장본을 읽어 하루 식단을 장바구니 한 건으로 보고, 같은 날 함께 나온 두 메뉴의 <b>지지도·신뢰도·향상도</b>를 계산해 표로 만드는 앱입니다.</p>
+  <p>산곡고 중식 184일의 저장본을 읽어 하루 식단을 장바구니 한 건으로 보고, 같은 날 함께 나온 두 메뉴의 <b>지지도·신뢰도·향상도</b>를 계산해 표로 만드는 앱입니다.</p>
   <p>저장본은 갱신하지 않는 고정 파일이므로 누가 실행해도 같은 값이 나옵니다. 인증키도 필요하지 않습니다.</p>
   <div class="specimen-row" style="grid-template-columns:repeat(auto-fit,minmax(280px,1fr))">
     <div class="specimen st">
@@ -353,7 +353,7 @@ figure[data-fig="baseline"] .wctl label, figure[data-fig="baseline"] .wctl .wout
       <div class="codewrap prompt"><span class="label">① 프롬프트</span><button class="copy-btn">복사</button><pre>"급식 규칙 찾기" 스트림릿 앱을 만들어 줘. 파일 이름은 main.py.
 아래 주소의 CSV를 읽어 줘. 글자는 UTF-8이고 열은 날짜, 식사, 메뉴 셋이야.
 https://raw.githubusercontent.com/greatsong/modudata/main/data/danggok_meals_184.csv
-메뉴 열에는 그날 나온 메뉴가 세로줄(|)로 이어져 있고, 당곡고 중식 184일이 한 줄에 하루씩 들어 있어.
+메뉴 열에는 그날 나온 메뉴가 세로줄(|)로 이어져 있고, 산곡고 중식 184일이 한 줄에 하루씩 들어 있어.
 - 하루 식단 하나를 장바구니 한 건으로 봐 줘.
 - 메뉴 이름의 괄호와 그 안의 내용은 전부 제외하고 세 줘.
 - 같은 날 함께 나온 적이 있는 메뉴 쌍을 모두 찾아 표로 만들어 줘. 열은 조건, 결과, 동시, 지지도, 신뢰도, 향상도.
@@ -640,7 +640,7 @@ else:
 </main>
 </div>
 
-<footer class="foot">당곡고등학교 · 데이터 과학 · 학생용 교재</footer>
+<footer class="foot">산곡고등학교 · 데이터 과학 · 학생용 교재</footer>
 <script src="assets/copy.js"></script>
 <script src="assets/check.js"></script>
 <script src="assets/quiz.js"></script>
